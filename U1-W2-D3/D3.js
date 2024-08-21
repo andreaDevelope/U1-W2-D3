@@ -1,133 +1,180 @@
 const starWarsCharacters = [
   {
-    name: 'Luke Skywalker',
+    name: "Luke Skywalker",
     height: 172,
     mass: 277,
-    hair_color: 'blond',
-    skin_color: 'fair',
-    eye_color: 'blue',
-    birth_year: '19BBY',
-    gender: 'male',
+    hair_color: "blond",
+    skin_color: "fair",
+    eye_color: "blue",
+    birth_year: "19BBY",
+    gender: "male",
   },
   {
-    name: 'C-3PO',
+    name: "C-3PO",
     height: 167,
     mass: 75,
-    hair_color: 'n/a',
-    skin_color: 'gold',
-    eye_color: 'yellow',
-    birth_year: '112BBY',
-    gender: 'n/a',
+    hair_color: "n/a",
+    skin_color: "gold",
+    eye_color: "yellow",
+    birth_year: "112BBY",
+    gender: "n/a",
   },
   {
-    name: 'R2-D2',
+    name: "R2-D2",
     height: 96,
     mass: 32,
-    hair_color: 'n/a',
-    skin_color: 'white, blue',
-    eye_color: 'red',
-    birth_year: '33BBY',
-    gender: 'n/a',
+    hair_color: "n/a",
+    skin_color: "white, blue",
+    eye_color: "red",
+    birth_year: "33BBY",
+    gender: "n/a",
   },
   {
-    name: 'Darth Vader',
+    name: "Darth Vader",
     height: 202,
     mass: 136,
-    hair_color: 'none',
-    skin_color: 'white',
-    eye_color: 'yellow',
-    birth_year: '41.9BBY',
-    gender: 'male',
+    hair_color: "none",
+    skin_color: "white",
+    eye_color: "yellow",
+    birth_year: "41.9BBY",
+    gender: "male",
   },
   {
-    name: 'Leia Organa',
+    name: "Leia Organa",
     height: 150,
     mass: 49,
-    hair_color: 'brown',
-    skin_color: 'light',
-    eye_color: 'brown',
-    birth_year: '19BBY',
-    gender: 'female',
+    hair_color: "brown",
+    skin_color: "light",
+    eye_color: "brown",
+    birth_year: "19BBY",
+    gender: "female",
   },
   {
-    name: 'Owen Lars',
+    name: "Owen Lars",
     height: 178,
     mass: 120,
-    hair_color: 'brown, grey',
-    skin_color: 'light',
-    eye_color: 'blue',
-    birth_year: '52BBY',
-    gender: 'male',
+    hair_color: "brown, grey",
+    skin_color: "light",
+    eye_color: "blue",
+    birth_year: "52BBY",
+    gender: "male",
   },
   {
-    name: 'Beru Whitesun lars',
+    name: "Beru Whitesun lars",
     height: 165,
     mass: 75,
-    hair_color: 'brown',
-    skin_color: 'light',
-    eye_color: 'blue',
-    birth_year: '47BBY',
-    gender: 'female',
+    hair_color: "brown",
+    skin_color: "light",
+    eye_color: "blue",
+    birth_year: "47BBY",
+    gender: "female",
   },
   {
-    name: 'R5-D4',
+    name: "R5-D4",
     height: 97,
     mass: 32,
-    hair_color: 'n/a',
-    skin_color: 'white, red',
-    eye_color: 'red',
-    birth_year: 'unknown',
-    gender: 'n/a',
+    hair_color: "n/a",
+    skin_color: "white, red",
+    eye_color: "red",
+    birth_year: "unknown",
+    gender: "n/a",
   },
   {
-    name: 'Biggs Darklighter',
+    name: "Biggs Darklighter",
     height: 183,
     mass: 84,
-    hair_color: 'black',
-    skin_color: 'light',
-    eye_color: 'brown',
-    birth_year: '24BBY',
-    gender: 'male',
+    hair_color: "black",
+    skin_color: "light",
+    eye_color: "brown",
+    birth_year: "24BBY",
+    gender: "male",
   },
   {
-    name: 'Obi-Wan Kenobi',
+    name: "Obi-Wan Kenobi",
     height: 182,
     mass: 77,
-    hair_color: 'auburn, white',
-    skin_color: 'fair',
-    eye_color: 'blue-gray',
-    birth_year: '57BBY',
-    gender: 'male',
+    hair_color: "auburn, white",
+    skin_color: "fair",
+    eye_color: "blue-gray",
+    birth_year: "57BBY",
+    gender: "male",
   },
-]
+];
 
 /* ESERCIZIO 1
   Crea una variabile chiamata "charactersNames" e assegnale un array vuoto
 */
+const charactersNames = [];
 
 /* ESERCIZIO 2
   Utilizzando un ciclo for, cicla l'array "starWarsCharacters".
   Dovrai accedere alla proprietà "name" di ogni oggetto in esso contenuto, e inserirla nell'array "charactersNames" creato precedentemente.
   Come risultato dovresti ottenere qualcosa di simile: ["Luke Skywalker", "C-3PO", "R2-D2", etc..]
 */
+starWarsCharacters.forEach((starWarsObj) => {
+  charactersNames.push(starWarsObj.name);
+});
+
+console.log(charactersNames);
 
 /* ESERCIZIO 3
   Seguendo i passaggi precedenti crea un nuovo array chiamato "femaleCharacters" e inserisci al suo interno tutti gli oggetti femminili.
 */
 
+const femaleCharacters = [];
+
+starWarsCharacters.forEach((starWarsObj) => {
+  if (starWarsObj.gender === "female") {
+    femaleCharacters.push(starWarsObj);
+  }
+});
+
+console.log(femaleCharacters);
+
 /* ESERCIZIO 4
   Crea un oggetto "eyeColor" che abbia le seguenti proprietà: blue, yellow, brown, red, blue-gray.
   Ad ognuna di queste proprietà assegna come valore un array vuoto.
 */
+const eyeColor = { blue: [], yellow: [], brown: [], red: [], blueGray: [] };
 
 /* ESERCIZIO 5
   Utilizza uno switch statement per inserire uno ad uno gli oggetti dei personaggi di "starWarsCharacters" negli array relativi al colore degli occhi precedentemente creati.
   Ogni personaggio dovrà finire nell'array corrispondente al suo colore degli occhi (al valore della sua proprietà "eye_color").
 */
+starWarsCharacters.forEach((starWarsObj) => {
+  switch (starWarsObj.eye_color) {
+    case "blue":
+      eyeColor.blue.push(starWarsObj);
+      break;
+    case "yellow":
+      eyeColor.yellow.push(starWarsObj);
+      break;
+    case "brown":
+      eyeColor.brown.push(starWarsObj);
+      break;
+    case "red":
+      eyeColor.red.push(starWarsObj);
+      break;
+    case "blue-gray":
+      eyeColor.blueGray.push(starWarsObj);
+      break;
+    default:
+      break;
+  }
+});
+
+console.log(eyeColor);
 
 /* ESERCIZIO 6
   Usa un while loop per calcolare la massa totale dell'equipaggio. Salvala in una variabile chiamata "crewMass".
 */
+let i = 0;
+let crewMass = 0;
+while (i < starWarsCharacters.length) {
+  crewMass += starWarsCharacters[i].mass;
+  i++;
+}
+console.log(`la massa complessiva dell' equipaggio spaziale è: ${crewMass}`);
 
 /* ESERCIZIO 7
   Crea uno if/else statement per rivelare la tipologia di carico, utilizzando la massa totale, di un'ipotetica astronave contenente i personaggi dell'array "starWarsCharacters".
@@ -140,16 +187,79 @@ const starWarsCharacters = [
 
   Una volta fatto, modifica la massa di qualche elemento dell'equipaggio e vedi se riesci ad ottenere un messaggio diverso.
 */
+if (crewMass < 500) {
+  console.log("Ship is under loaded");
+} else if (crewMass < 700) {
+  console.log("Ship is half loaded");
+} else if (crewMass < 900) {
+  console.log("Warning: Load is over or equal at 700");
+} else if (crewMass < 1000) {
+  console.log("Critical Load: Over 900 or equal");
+} else {
+  console.log("DANGER! OVERLOAD ALERT: escape from ship now!");
+}
 
 /* ESERCIZIO 8
   Usa un for loop per cambiare il valore della proprietà "gender" di alcuni personaggi dal valore "n/a" a "robot" (Tip: puoi effettuare la riassegnazione del valore corrispondente o creare un nuovo array)
 */
+for (i = 0; i < starWarsCharacters.length; i++) {
+  if (starWarsCharacters[i].gender === "n/a") {
+    starWarsCharacters[i].gender = "robot";
+  }
+}
+console.log(starWarsCharacters);
 
 /* --EXTRA-- ESERCIZIO 9
   Utilizzando gli elementi presenti nell'array "femaleCharacters" rimuovi dall'array "charactersNames" le stringhe corrispondenti a personaggi con lo stesso nome.
   Una volta fatto crea un console.log per controllare la proprietà length di "charactersNames" prima e dopo l'operazione.
 */
+for (let i = charactersNames.length - 1; i >= 0; i--) {
+  for (let j = 0; j < femaleCharacters.length; j++) {
+    if (charactersNames[i] === femaleCharacters[j].name) {
+      charactersNames.splice(i, 1);
+      break;
+    }
+  }
+}
+console.log(charactersNames); //potevo farlo anche con un ciclo for considerando che femaleCharacters contiene 2 elementi
 
 /* --EXTRA-- ESERCIZIO 10
   Crea una funzionalità che selezioni un elemento casuale dall'array "starWarsCharacters" e ne stampi in console le proprietà in modo discorsivo (a tuo piacimento).
 */
+
+for (i = 0; i < starWarsCharacters.length; i++) {
+  let random = Math.floor(Math.random() * (starWarsCharacters.length + 1));
+  console.log(`
+    stiamo per annunciare il vincitore della riffa semestrale della nostra fantastica flotta spaziale.....
+    rullo di tamburi................ 
+    il vincitore è ${starWarsCharacters[random].name}
+    complimenti hai vinto una razione extra della nostra fantastica mensa per una settimana. e un congedo
+    di 2 settimane, salutaci il pianeta da cui provieni....
+    nel caso volete chiedergli dei favori vi lascio la scheda completa del compagno XD 
+    nome:
+    ${starWarsCharacters[random].name}
+    eight:
+    ${starWarsCharacters[random].height}
+    mass:
+    ${starWarsCharacters[random].mass}
+    hair_color:
+    ${starWarsCharacters[random].hair_color}
+    skin_color:
+    ${starWarsCharacters[random].skin_color}
+    eye_color:
+    ${starWarsCharacters[random].eye_color}
+    birth_year:
+    ${starWarsCharacters[random].birth_year}
+    gender:
+    ${starWarsCharacters[random].gender}
+      `);
+  break;
+}
+// name: "Obi-Wan Kenobi",
+// height: 182,
+// mass: 77,
+// hair_color: "auburn, white",
+// skin_color: "fair",
+// eye_color: "blue-gray",
+// birth_year: "57BBY",
+// gender: "male",
